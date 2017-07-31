@@ -1,0 +1,25 @@
+table
+{
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right:auto;
+    border: solid 3px
+}
+td
+{
+    border: solid 1px;
+}
+#title
+{
+    font-weight: bold;
+    font-size: larger;
+    background-color: #0BF;
+}
+.header
+{
+    font-weight: bold;
+    font-size: large;
+    background-color: #777;
+}
+

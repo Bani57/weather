@@ -1,7 +1,15 @@
 package com.endava.weather;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class SystemInfo {
     private Integer type;
+    @Id
+    @GeneratedValue
+    private Long data_id;
     private Integer id;
     private Double message;
     private String country;
@@ -22,7 +30,7 @@ public class SystemInfo {
     @Override
     public String toString()
     {
-        return "Country: "+country+"\nSunrise time: "+sunrise+"\nSunset time: "+sunset;
+        return "Country: "+country+"<br/>Sunrise time: "+sunrise+"<br/>Sunset time: "+sunset;
     }
     public Integer getType() {
         return type;

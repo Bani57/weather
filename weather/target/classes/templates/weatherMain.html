@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Main weather info</title>
+    <!--<link href="../static/main.css" rel="stylesheet" content="text/css; charset=UTF-8">-->
+</head>
+<style>
+    table
+    {
+        text-align: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right:auto;
+        border: solid 3px
+    }
+    td
+    {
+        border: solid 1px;
+    }
+    #title
+    {
+        font-weight: bold;
+        font-size: larger;
+        background-color: #0BF;
+    }
+    .header
+    {
+        font-weight: bold;
+        font-size: large;
+        background-color: #777;
+    }
+
+
+</style>
+<body>
+<table>
+    <tr id="title">
+        <td colspan="2">Air conditions</td>
+    </tr>
+    <tr>
+        <td>Temperature</td>
+        <!--/*@thymesVar id="temp" type="java.lang.Integer"*/-->
+        <!--/*@thymesVar id="temp_minf" type="java.lang.Integer"*/-->
+        <!--/*@thymesVar id="tempf" type="java.lang.Integer"*/-->
+        <td th:text="${temp}+'°C / '+${tempf}+'°F'"></td>
+    </tr>
+    <tr>
+        <!--/*@thymesVar id="temp_min" type="java.lang.Integer"*/-->
+        <!--/*@thymesVar id="temp_minf" type="java.lang.Integer"*/-->
+        <td th:text="'Low: '+${temp_min}+'°C / '+${temp_minf}+'°F'"></td>
+        <!--/*@thymesVar id="temp_max" type="java.lang.Integer"*/-->
+        <!--/*@thymesVar id="temp_maxf" type="java.lang.Integer"*/-->
+        <td th:text="'High: '+${temp_max}+'°C / '+${temp_maxf}+'°F'"></td>
+    </tr>
+    <tr>
+        <td>Pressure</td>
+        <!--/*@thymesVar id="pressure" type="java.lang.Integer"*/-->
+        <td th:text="${pressure}+'kPa'"></td>
+    </tr>
+    <tr>
+        <td>Humidity</td>
+        <!--/*@thymesVar id="humidity" type="java.lang.Integer"*/-->
+        <td th:text="${humidity}+'%'"></td>
+    </tr>
+</table>
+</body>
+</html>

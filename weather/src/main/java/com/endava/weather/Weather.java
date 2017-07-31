@@ -1,6 +1,14 @@
 package com.endava.weather;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Weather {
+    @Id
+    @GeneratedValue
+    private Long data_id;
     private int id;
     private String main;
     private String description;
@@ -18,7 +26,7 @@ public class Weather {
     @Override
     public String toString()
     {
-        return "Current weather: "+main+"\nDescription: "+description+"\nWeather icon: "+icon;
+        return "Current weather: "+main+"<br/>Description: "+description+"<br/><img src=http://openweathermap.org/img/w/"+icon+".png />";
     }
     public int getId() {
         return id;

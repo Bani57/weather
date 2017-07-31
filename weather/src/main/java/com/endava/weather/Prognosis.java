@@ -1,21 +1,35 @@
 package com.endava.weather;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+@Entity
 public class Prognosis {
+    @OneToOne
     private Coordinates coord;
+    @OneToOne
     private Weather[] weather;
     private String base;
+    @OneToOne
     private MainInfo main;
     private Integer visibility;
+    @OneToOne
     private Wind wind;
+    @OneToOne
     private Clouds clouds;
     private Long dt;
+    @OneToOne
     private SystemInfo sys;
+    @Id
+    @GeneratedValue
+    private Long data_id;
     private Integer id;
     private String name;
     private Integer cod;
 
-    public Prognosis() {
+    private Prognosis() {
     }
 
     public Prognosis(Coordinates coord, Weather[] weather, String base, MainInfo main, Integer visibility, Wind wind, Clouds clouds, Long dt, SystemInfo sys, Integer id, String name, Integer cod) {
@@ -35,7 +49,7 @@ public class Prognosis {
     @Override
     public String toString()
     {
-        return coord.toString()+"\n"+weather[0].toString()+"\nBase: "+base+"\n"+main.toString()+"\nVisibility: "+visibility+"\n"+wind.toString()+"\n"+clouds.toString()+"\nDate: "+dt+"\nCity: "+name;
+        return coord.toString()+"<br/>"+weather[0].toString()+"<br/>Base: "+base+"<br/>"+main.toString()+"<br/>Visibility: "+visibility+"<br/>"+wind.toString()+"<br/>"+clouds.toString()+"<br/>Dt: "+dt+"<br/>"+sys.toString()+"<br/>City: "+name;
     }
     public Coordinates getCoord() {
         return coord;

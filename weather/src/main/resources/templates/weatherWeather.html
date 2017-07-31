@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Weather conditions</title>
+    <!--<link href="../static/main.css" rel="stylesheet" content="text/css; charset=UTF-8">-->
+</head>
+<style>
+    table
+    {
+        text-align: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right:auto;
+        border: solid 3px
+    }
+    td
+    {
+        border: solid 1px;
+    }
+    #title
+    {
+        font-weight: bold;
+        font-size: larger;
+        background-color: #0BF;
+    }
+    .header
+    {
+        font-weight: bold;
+        font-size: large;
+        background-color: #777;
+    }
+
+
+</style>
+<body>
+<table>
+    <tr id="title"><td colspan="2">Weather conditions</td></tr>
+    <tr>
+        <!--/*@thymesVar id="weather_main" type="java.lang.String"*/-->
+        <td th:text="${weather_main}"></td>
+        <td><!--/*@thymesVar id="icon" type="java.lang.String"*/-->
+            <img th:src="'http://openweathermap.org/img/w/'+${icon}+'.png'"/></td>
+    </tr>
+    <tr><!--/*@thymesVar id="weather_description" type="java.lang.String"*/-->
+        <td colspan="2" th:text="${weather_description}"></td></tr>
+</table>
+</body>
+</html>

@@ -1,6 +1,14 @@
 package com.endava.weather;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Clouds {
+    @Id
+    @GeneratedValue
+    private Long id;
     private Integer all;
 
     public Clouds() {
@@ -20,6 +28,6 @@ public class Clouds {
     @Override
     public String toString()
     {
-        return "Cloud type: "+all;
+        return "Cloud all: "+all;
     }
 }

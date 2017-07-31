@@ -1,15 +1,23 @@
 package com.endava.weather;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Wind {
+    @Id
+    @GeneratedValue
+    private Long id;
     private Double speed;
-    private Integer direction;
+    private Double deg;
 
     public Wind() {
     }
 
-    public Wind(Double speed, Integer direction) {
+    public Wind(Double speed, Double deg) {
         this.speed = speed;
-        this.direction = direction;
+        this.deg = deg;
     }
 
     public Double getSpeed() {
@@ -20,15 +28,16 @@ public class Wind {
         this.speed = speed;
     }
 
-    public Integer getDirection() {
-        return direction;
+    public Double getDeg() {
+        return deg;
     }
 
-    public void setDirection(Integer direction) {
-        this.direction = direction;
+    public void setDeg(Double deg) {
+        this.deg = deg;
     }
-    @Override public String toString()
+    @Override
+    public String toString()
     {
-        return "Wind speed: "+speed+"\nWind direction: "+direction;
+        return "Wind speed: "+speed+"<br/>Wind direction: "+deg;
     }
 }

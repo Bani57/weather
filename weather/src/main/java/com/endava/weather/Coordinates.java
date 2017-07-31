@@ -1,7 +1,14 @@
 package com.endava.weather;
 
-public class Coordinates {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class Coordinates {
+    @Id
+    @GeneratedValue
+    private Long id;
     private Double lon;
     private Double lat;
 
@@ -31,6 +38,6 @@ public class Coordinates {
     @Override
     public String toString()
     {
-        return "Longitude: "+lon+"\nLatitude: "+lat;
+        return "Longitude: "+lon+"<br/>Latitude: "+lat;
     }
 }

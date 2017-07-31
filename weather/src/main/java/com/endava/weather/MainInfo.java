@@ -1,6 +1,14 @@
 package com.endava.weather;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class MainInfo {
+    @Id
+    @GeneratedValue
+    private Long id;
     private Double temp;
     private Integer pressure;
     private Integer humidity;
@@ -20,7 +28,7 @@ public class MainInfo {
     @Override
     public String toString()
     {
-        return "Temperature: "+(temp-273.15)+"\nPressure: "+pressure+"\nHumidity: "+humidity+"\nMinimum temperature: "+(temp_min-273.15)+"\nMaximum temperature: "+(temp_max-273.15);
+        return "Temperature: "+(temp-273.15)+"C<br/>Pressure: "+pressure+" kPa<br/>Humidity: "+humidity+"%<br/>Minimum temperature: "+(temp_min-273.15)+"C<br/>Maximum temperature: "+(temp_max-273.15)+"C";
     }
     public Double getTemp() {
         return temp;

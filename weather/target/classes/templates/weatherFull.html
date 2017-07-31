@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Full weather</title>
+    <!--<link href="../static/main.css" rel="stylesheet" content="text/css; charset=UTF-8">-->
+</head>
+<style>
+    table
+    {
+        text-align: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right:auto;
+        border: solid 3px
+    }
+    td
+    {
+        border: solid 1px;
+    }
+    #title
+    {
+        font-weight: bold;
+        font-size: larger;
+        background-color: #0BF;
+    }
+    .header
+    {
+        font-weight: bold;
+        font-size: large;
+        background-color: #777;
+    }
+
+
+</style>
+<body>
+<table>
+    <!--/*@thymesVar id="city" type="java.lang.String"*/-->
+    <tr id="title"><td colspan="2" th:text="'Weather for ' + ${city}"></td></tr>
+    <tr class="header"><td colspan="2">Coordinates</td></tr>
+    <tr>
+        <!--/*@thymesVar id="lon" type="java.lang.Double"*/-->
+        <!--/*@thymesVar id="lat" type="java.lang.Double"*/-->
+        <td th:text="'Longitude: '+${lon}"></td>
+        <td th:text="'Latitude: '+${lat}"></td>
+    </tr>
+    <tr class="header"><td colspan="2">Weather conditions</td></tr>
+    <tr>
+        <!--/*@thymesVar id="weather_main" type="java.lang.String"*/-->
+        <td th:text="${weather_main}"></td>
+        <td><!--/*@thymesVar id="icon" type="java.lang.String"*/-->
+        <img th:src="'http://openweathermap.org/img/w/'+${icon}+'.png'"/></td>
+    </tr>
+    <tr><!--/*@thymesVar id="weather_description" type="java.lang.String"*/-->
+    <td colspan="2" th:text="${weather_description}"></td></tr>
+    <tr class="header">
+        <td colspan="2">Air conditions</td>
+    </tr>
+    <tr>
+        <td>Temperature</td>
+        <!--/*@thymesVar id="temp" type="java.lang.Integer"*/-->
+        <!--/*@thymesVar id="temp_minf" type="java.lang.Integer"*/-->
+        <!--/*@thymesVar id="tempf" type="java.lang.Integer"*/-->
+        <td th:text="${temp}+'°C / '+${tempf}+'°F'"></td>
+    </tr>
+    <tr>
+        <!--/*@thymesVar id="temp_min" type="java.lang.Integer"*/-->
+        <!--/*@thymesVar id="temp_minf" type="java.lang.Integer"*/-->
+        <td th:text="'Low: '+${temp_min}+'°C / '+${temp_minf}+'°F'"></td>
+        <!--/*@thymesVar id="temp_max" type="java.lang.Integer"*/-->
+        <!--/*@thymesVar id="temp_maxf" type="java.lang.Integer"*/-->
+        <td th:text="'High: '+${temp_max}+'°C / '+${temp_maxf}+'°F'"></td>
+    </tr>
+    <tr>
+        <td>Pressure</td>
+        <!--/*@thymesVar id="pressure" type="java.lang.Integer"*/-->
+        <td th:text="${pressure}+'kPa'"></td>
+    </tr>
+    <tr>
+        <td>Humidity</td>
+        <!--/*@thymesVar id="humidity" type="java.lang.Integer"*/-->
+        <td th:text="${humidity}+'%'"></td>
+    </tr>
+    <tr>
+        <td>Visibility</td>
+        <!--/*@thymesVar id="visibility" type="java.lang.Integer"*/-->
+        <td th:text="${visibility}"></td>
+    </tr>
+    <tr class="header">
+        <td colspan="2">Wind conditions</td>
+    </tr>
+    <tr>
+        <!--/*@thymesVar id="speed" type="java.lang.Double"*/-->
+        <td th:text="'Speed: '+${speed}+'m/s'"></td>
+        <!--/*@thymesVar id="deg" type="java.lang.Double"*/-->
+        <td th:text="'Direction: '+${deg}+'°'"></td>
+    </tr>
+    <tr>
+        <td>Cloudiness</td>
+        <!--/*@thymesVar id="all" type="java.lang.Integer"*/-->
+        <td th:text="${all}+'%'"></td>
+    </tr>
+    <tr class="header"><td colspan="2">System info</td></tr>
+    <tr>
+        <td>Country</td>
+        <!--/*@thymesVar id="country" type="java.lang.String"*/-->
+        <td th:text="${country}"></td>
+    </tr>
+    <tr>
+        <!--/*@thymesVar id="sunrise" type="java.lang.String"*/-->
+        <td th:text="'Sunrise: '+${sunrise}"></td>
+        <!--/*@thymesVar id="sunset" type="java.lang.String"*/-->
+        <td th:text="'Sunset: '+${sunset}"></td>
+    </tr>
+</table>
+</body>
+</html>
