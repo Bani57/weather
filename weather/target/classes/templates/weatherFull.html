@@ -29,6 +29,7 @@
         font-weight: bold;
         font-size: large;
         background-color: #777;
+        height: 100%;
     }
 
 
@@ -44,6 +45,7 @@
         <td th:text="'Longitude: '+${lon}"></td>
         <td th:text="'Latitude: '+${lat}"></td>
     </tr>
+    <tr class = "header"><td colspan="2"></td></tr>
     <tr class="header"><td colspan="2">Weather conditions</td></tr>
     <tr>
         <!--/*@thymesVar id="weather_main" type="java.lang.String"*/-->
@@ -53,6 +55,7 @@
     </tr>
     <tr><!--/*@thymesVar id="weather_description" type="java.lang.String"*/-->
     <td colspan="2" th:text="${weather_description}"></td></tr>
+    <tr class = "header"><td colspan="2"></td></tr>
     <tr class="header">
         <td colspan="2">Air conditions</td>
     </tr>
@@ -81,6 +84,7 @@
         <!--/*@thymesVar id="humidity" type="java.lang.Integer"*/-->
         <td th:text="${humidity}+'%'"></td>
     </tr>
+    <tr class = "header"><td colspan="2"></td></tr>
     <tr>
         <td>Visibility</td>
         <!--/*@thymesVar id="visibility" type="java.lang.Integer"*/-->
@@ -95,6 +99,7 @@
         <!--/*@thymesVar id="deg" type="java.lang.Double"*/-->
         <td th:text="'Direction: '+${deg}+'°'"></td>
     </tr>
+    <tr class = "header"><td colspan="2"></td></tr>
     <tr>
         <td>Cloudiness</td>
         <!--/*@thymesVar id="all" type="java.lang.Integer"*/-->

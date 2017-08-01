@@ -38,7 +38,7 @@ public class WeatherController {
     {
         RestTemplate restTemplate=restTemplate(new RestTemplateBuilder());
         Prognosis prognosis = restTemplate.getForObject(
-                "http://samples.openweathermap.org/data/2.5/weather?id="+id+"&appid="+token, Prognosis.class);
+                "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+token, Prognosis.class);
         model.addAttribute("city",city);
         model.addAttribute("lon",prognosis.getCoord().getLon());
         model.addAttribute("lat",prognosis.getCoord().getLat());
@@ -69,7 +69,7 @@ public class WeatherController {
     {
         RestTemplate restTemplate=restTemplate(new RestTemplateBuilder());
         Prognosis prognosis = restTemplate.getForObject(
-                "http://samples.openweathermap.org/data/2.5/weather?id="+id+"&appid="+token, Prognosis.class);
+                "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+token, Prognosis.class);
         model.addAttribute("city",city);
         model.addAttribute("temp",prognosis.getMain().getTemp().intValue()-273);
         model.addAttribute("temp_min",prognosis.getMain().getTemp_min().intValue()-273);
@@ -86,7 +86,7 @@ public class WeatherController {
     {
         RestTemplate restTemplate=restTemplate(new RestTemplateBuilder());
         Prognosis prognosis = restTemplate.getForObject(
-                "http://samples.openweathermap.org/data/2.5/weather?id="+id+"&appid="+token, Prognosis.class);
+                "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+token, Prognosis.class);
         model.addAttribute("city",city);
         model.addAttribute("weather_main",prognosis.getWeather()[0].getMain());
         model.addAttribute("weather_description",prognosis.getWeather()[0].getDescription());
